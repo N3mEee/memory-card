@@ -29,6 +29,8 @@ body {
     place-items: center;
     min-width: 320px;
     min-height: 100vh;
+    background-image: url(https://r4.wallpaperflare.com/wallpaper/76/662/448/y-shtola-final-fantasy-final-fantasy-xiv-a-realm-reborn-miqo-te-wallpaper-e950b8bd21eadd1b8617385fb0d1363d.jpg);
+    background-size: cover;
 }
 
 h1 {
