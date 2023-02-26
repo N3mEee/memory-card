@@ -26,10 +26,10 @@ function App() {
             setBestScore(score);
         }
 
-        if (bestScore + 1 === cards.length) {
+        if (bestScore === cards.length) {
             setWinner(true);
         }
-    }, [score]);
+    });
 
     const shuffle = (index: number = 0) => {
         setCards([...cards.sort(() => Math.random() - 0.5)]);
