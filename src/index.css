@@ -19,18 +19,23 @@ a {
     color: #646cff;
     text-decoration: inherit;
 }
+
 a:hover {
     color: #535bf2;
+}
+
+html {
+    background: url(https://wallpapersafari.com/downloadres/s8FCPB/desktop/1600/900/) no-repeat top right fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 body {
     margin: 0;
     display: flex;
     place-items: center;
-    min-width: 320px;
-    min-height: 100vh;
-    background-image: url(https://r4.wallpaperflare.com/wallpaper/76/662/448/y-shtola-final-fantasy-final-fantasy-xiv-a-realm-reborn-miqo-te-wallpaper-e950b8bd21eadd1b8617385fb0d1363d.jpg);
-    background-size: cover;
 }
 
 h1 {
@@ -49,6 +54,7 @@ button {
     cursor: pointer;
     transition: border-color 0.25s;
 }
+
 button:hover {
     border-color: #646cff;
 }
