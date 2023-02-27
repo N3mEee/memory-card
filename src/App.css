@@ -1,7 +1,5 @@
 #root {
-    max-width: 1280px;
     margin: 0 auto;
-    padding: 2rem;
     text-align: center;
 }
 .App {
@@ -17,17 +15,27 @@
 .card {
     width: 200px;
     height: 400px;
-    background-color: rgba(0, 0, 0, 0.352);
-    box-shadow: 0 0px 20px 10px rgb(0, 0, 0);
-    transition: all 0.1s ease-in-out;
+    background-color: rgba(0, 0, 0, 0.605);
+    border: 1px solid black;
+    box-shadow: 0 0px 2px 1px rgb(255, 255, 255);
     cursor: pointer;
+    border-radius: 15px;
+    padding: 10px;
+    transition: all 0.15s ease-in-out;
 }
+
 .card:hover {
-    box-shadow: 0 0px 20px 10px rgb(255, 255, 255);
     transform: scale(1.1);
+    box-shadow: 0 0px 30px 5px rgb(255, 255, 255);
 }
 
 img {
     width: inherit;
     height: inherit;
+}
+
+@media (max-width: 914px) {
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
