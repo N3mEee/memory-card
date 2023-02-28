@@ -13,7 +13,7 @@
 }
 
 .card {
-    width: 200px;
+    width: 220px;
     height: 400px;
     background-color: rgba(0, 0, 0, 0.605);
     border: 1px solid black;
@@ -22,6 +22,9 @@
     border-radius: 15px;
     padding: 10px;
     transition: all 0.15s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .card:hover {
@@ -30,12 +33,16 @@
 }
 
 img {
-    width: inherit;
     height: inherit;
 }
 
 @media (max-width: 914px) {
     .cards {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .card {
+        width: 110px;
+        height: 200px;
     }
 }

@@ -81,7 +81,7 @@ function App() {
                 </div>
             ) : (
                 <div>
-                    <p>GZ you fucking WON!</p>
+                    <p>Congratulations, You Won!</p>
                     <button onClick={handleReset}>Reset</button>
                 </div>
             )}
