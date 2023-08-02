@@ -13,15 +13,16 @@
 }
 
 .card {
-    width: 220px;
-    height: 400px;
+    width: 200px;
+    height: 350px;
     background-color: rgba(0, 0, 0, 0.605);
     border: 1px solid black;
     box-shadow: 0 0px 2px 1px rgb(255, 255, 255);
     cursor: pointer;
     border-radius: 15px;
     padding: 10px;
-    transition: all 0.15s ease-in-out;
+    transition-property: transform, box-shadow;
+    transition: 0.15s ease-in-out;
     display: flex;
     justify-content: center;
     align-items: center;
