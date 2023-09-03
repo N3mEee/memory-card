@@ -1,17 +1,19 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 
+const cardsList = [
+    "https://static.wikia.nocookie.net/finalfantasy/images/d/d5/Alphinaud_from_Final_Fantasy_XIV_Heavensward.png",
+    "https://static.wikia.nocookie.net/finalfantasy/images/9/99/Minfilia_NPC_Render.png",
+    "https://static.wikia.nocookie.net/finalfantasy/images/9/9b/FFXIV_SH_Y%27shtola_%28Trust%29.png",
+    "https://static.wikia.nocookie.net/finalfantasy/images/6/6b/FFXIV_SH_Thancred_%28Trust%29.png",
+    "https://static.wikia.nocookie.net/finalfantasy/images/2/29/FFXIV_Lyse.png",
+    "https://static.wikia.nocookie.net/finalfantasy/images/e/eb/FFXIV_SH_Urianger_%28Trust%29.png",
+    "https://static.wikia.nocookie.net/finalfantasy/images/0/06/FFXIV_Yotsuyu.png",
+    "https://static.wikia.nocookie.net/finalfantasy/images/6/66/Edmont_de_Fortemps.png",
+];
+
 function App() {
-    const [cards, setCards] = useState([
-        "https://static.wikia.nocookie.net/finalfantasy/images/d/d5/Alphinaud_from_Final_Fantasy_XIV_Heavensward.png",
-        "https://static.wikia.nocookie.net/finalfantasy/images/9/99/Minfilia_NPC_Render.png",
-        "https://static.wikia.nocookie.net/finalfantasy/images/9/9b/FFXIV_SH_Y%27shtola_%28Trust%29.png",
-        "https://static.wikia.nocookie.net/finalfantasy/images/6/6b/FFXIV_SH_Thancred_%28Trust%29.png",
-        "https://static.wikia.nocookie.net/finalfantasy/images/2/29/FFXIV_Lyse.png",
-        "https://static.wikia.nocookie.net/finalfantasy/images/e/eb/FFXIV_SH_Urianger_%28Trust%29.png",
-        "https://static.wikia.nocookie.net/finalfantasy/images/0/06/FFXIV_Yotsuyu.png",
-        "https://static.wikia.nocookie.net/finalfantasy/images/6/66/Edmont_de_Fortemps.png",
-    ]);
+    const [cards, setCards] = useState<string[]>(cardsList);
     const [clickedCards, setClickedCards] = useState([""]);
     const [score, setScore] = useState(0);
     const [bestScore, setBestScore] = useState(0);
@@ -29,9 +31,9 @@ function App() {
         if (bestScore === cards.length) {
             setWinner(true);
         }
-    });
+    }, [score, bestScore]);
 
-    const shuffle = (index: number = 0) => {
+    const shuffle = () => {
         setCards([...cards.sort(() => Math.random() - 0.5)]);
     };
 
@@ -43,12 +45,11 @@ function App() {
         ) {
             setScore(0);
             setClickedCards([""]);
-            shuffle();
         } else {
             setScore(score + 1);
             setClickedCards([...clickedCards, cards[index]]);
-            shuffle();
         }
+        shuffle();
     };
 
     const handleReset = () => {
@@ -67,7 +68,7 @@ function App() {
                 <div className="cards">
                     {cards.map((card, index) => {
                         return (
-                            <div
+                            <button
                                 key={index}
                                 onClick={() => {
                                     handleScore(index);
@@ -75,7 +76,7 @@ function App() {
                                 className="card"
                             >
                                 <img src={card} alt="" />
-                            </div>
+                            </button>
                         );
                     })}
                 </div>
